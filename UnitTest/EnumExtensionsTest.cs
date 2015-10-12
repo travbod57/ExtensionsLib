@@ -16,6 +16,15 @@ namespace UnitTest
         }
 
         [TestMethod]
+        public void StringToEnumViaExtension()
+        {
+            string str = "AllClaims";
+            ClaimsEnum? result = str.ToEnum<ClaimsEnum>();
+
+            Assert.IsTrue(result == ClaimsEnum.AllClaims);
+        }
+
+        [TestMethod]
         public void StringToValue()
         {
             ClaimsEnum result = (ClaimsEnum)Enum.Parse(typeof(ClaimsEnum), "AllClaims");
